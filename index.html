@@ -49,6 +49,28 @@
 
   </main>
 
+  <!-- ================= MODAL DETALLE PRODUCTO ================= -->
+  <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tituloModal">Detalle del producto</h5>
+          <div class="precio-modal ms-auto me-2" id="precioModal">$ 0</div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="imagenModal" src="" alt="Imagen del producto" class="imagen-modal mb-3">
+          <p id="descripcionModal" class="text-start text-muted"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-agregar w-100" id="btnAgregarModal">
+            <i class="bi bi-cart-plus"></i> Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ================= FOOTER ================= -->
   <footer class="pie-pagina text-center py-3 mt-5">
     <div class="container">
@@ -58,5 +80,7 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Mis scripts -->
+  <script src="js/productos.js"></script>
 </body>
 </html>

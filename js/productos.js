@@ -26,7 +26,12 @@ async function traerProductos() {
   } catch (error) {
     document.getElementById("cargando").classList.add("d-none");
     console.log("Error al traer los productos: " + error);
-    alert("No se pudieron cargar los productos. Intenta mas tarde.");
+    Swal.fire({
+      icon: "error",
+      title: "Ups...",
+      text: "No se pudieron cargar los productos. Intenta mas tarde.",
+      confirmButtonColor: "#0d9488"
+    });
   }
 }
 
@@ -69,9 +74,11 @@ function abrirModal(id) {
   document.getElementById("imagenModal").alt = producto.title;
   document.getElementById("descripcionModal").textContent = producto.description;
 
-  // por ahora el boton solo cierra el modal (mas adelante lo conecto al carrito)
+  // configuro el boton de agregar al carrito de este producto
   let botonAgregar = document.getElementById("btnAgregarModal");
   botonAgregar.onclick = function () {
+    agregarAlCarrito(producto);
+    // al agregar al carrito el modal se cierra y vuelvo al listado
     modalProducto.hide();
   };
 
